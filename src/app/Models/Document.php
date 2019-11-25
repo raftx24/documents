@@ -100,7 +100,7 @@ class Document extends Model implements Attachable, AuthorizesFileAccess
     private function ocr()
     {
         if ($this->ocrable()) {
-            dispatch(new OCRJob($this));
+            dispatch(new OcrJob($this));
         }
 
         return $this;
